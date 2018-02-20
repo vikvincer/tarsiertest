@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import { YoutubePlayerModule } from 'ngx-youtube-player';
 
 import { FormsModule } from '@angular/forms';

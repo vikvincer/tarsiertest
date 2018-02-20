@@ -3,7 +3,8 @@ let akamai: any;
 
 @Component({
     selector: 'akamaiPlayer',
-    templateUrl: './akmPlayer.component.html'
+    templateUrl: './akmPlayer.component.html',
+    styleUrls: ['akmPlayer.component.scss']
 })
 
 export class AkamaiPlayerComponent  implements AfterContentInit{
@@ -12,9 +13,9 @@ export class AkamaiPlayerComponent  implements AfterContentInit{
         let doc = window.document;
         let playerApi = doc.createElement('script');
         playerApi.type = 'text/javascript';
-        playerApi.src = './assets/scripts/vendor/amp.premier/amp.premier.min.js';
-        doc.body.appendChild(playerApi);  
-        // this.createPlayer();
+        playerApi.src = '/assets/scripts/vendor/amp.premier/amp.premier.min.js';
+        doc.head.appendChild(playerApi);  
+        this.createPlayer();
     }
 
     createPlayer():void {
@@ -25,7 +26,6 @@ export class AkamaiPlayerComponent  implements AfterContentInit{
                 autoplay : false,
                 media :  {
                     src : "http://mediapm.edgesuite.net/osmf/content/test/spacealonehd_sounas_640_700.mp4"
-
                 },
                 captioning : {
                     enabled : true,
@@ -41,8 +41,6 @@ export class AkamaiPlayerComponent  implements AfterContentInit{
                 });
             }
         }
-
-
     }
 
 }
