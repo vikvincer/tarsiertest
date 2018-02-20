@@ -1,0 +1,28 @@
+/*!
+ * [Project Name]
+ * ABS-CBN Corporation 2017
+ */
+
+// Reset
+@import 'normalize';
+
+// Variables 
+@import 'variables';
+
+// Font Awesome
+@import 'assets/styles/font-awesome.min.css';
+
+// Font Tarsier
+@import 'assets/styles/tarsier-font.css';
+
+// Slick
+@import 'slick';
+
+// Main
+@import 'main';
+
+// Loader css 
+@import 'assets/styles/loaders.min.css'; 
+
+// Media Queries
+@import 'mediaqueries';

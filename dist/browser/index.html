@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Tarsier</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link href="styles.88a7a4a5a252e58a32c7.bundle.css" rel="stylesheet"/></head><script type="text/javascript" src="assets/scripts/vendor/amp.premier/amp.premier.min.js"></script><script type="text/javascript">var amp,
+  media = [ {
+    autoplay : true,
+    title : "Space Alone",
+    poster : '../resources/images/space_alone.jpg',
+    duration : 108,
+    src : "http://mediapm.edgesuite.net/osmf/content/test/spacealonehd_sounas_640_700.mp4",
+    track: [{
+      kind: "captions",
+      type: "application/ttml+xml",
+      lang: "en",
+      src: "captioning.xml"
+    }]
+  }];
+
+  function loadHandler(event) {
+    var config = {
+      rules : {
+        android_4_gets_m3u8 : {
+          regexp : "Android 4"
+        }
+      },
+      eventmanagement : {
+        enabled : false
+      }
+    };
+
+    amp = akamai.amp.AMP.create("akamai-media-player", config, readyHandler);
+  }
+
+  function readyHandler(event) {
+    amp.addEventListener("ended", endedHandler);
+  }
+
+  function endedHandler(event) {
+    console.log("ended");
+  }</script><body onload="loadHandler(event)" ontouchstart=""><app-root></app-root><script type="text/javascript" src="resources/js/hls.min.js"></script><script type="text/javascript" src="akamai/amp/react/React.min.js"></script><script type="text/javascript" src="inline.e3032c1556a34fd69ac9.bundle.js"></script><script type="text/javascript" src="polyfills.b89f6da3f94d82c339a7.bundle.js"></script><script type="text/javascript" src="main.6776d191729f73eccb30.bundle.js"></script></body></html>
