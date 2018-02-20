@@ -21,7 +21,7 @@
   },
   "scripts": {
 
-    "start": "nnode dist/server"
+    "start": "node dist/server"
 
   },
   "pre-commit": [
