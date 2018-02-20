@@ -1,0 +1,105 @@
+<div class="main-content inner-content demo-content">
+
+    <section class="">
+        <div class="block">
+            <form (ngSubmit)="onSubmit()" #profileForm="ngForm" #formDemoProfile>
+                <div class="title-head form-title white">
+                    <h2>SUBMIT A DEMO</h2>
+                    <p>Wherever you are in the world, we’d love to hear what you’ve got! And because we’re all about family, we want to know you better. Send us a link to your social media page, and we’ll make sure to check it out.</p>
+                </div>
+
+                <div class="two-column">
+                    <div class="left">
+                        <h1>Profile</h1>
+                    </div>
+                    <div class="right">
+                        <div class="form-group">
+                            <label for="inputArtistName">Artist Name *</label>
+                            <input type="text" (keyup)="keyupValidation($event)" class="form-control" [(ngModel)]="demoProfile.stageName" name="stageName" id="stageName" required #stageName>
+                        </div>
+                        <div class="form-group grid-2">
+                            <label for="inputFirstName">Name *</label>
+                            <input type="text" (keyup)="keyupValidation($event)" class="form-control" [(ngModel)]="demoProfile.fName" name="fName" id="fName" #fName placeholder="First Name" required>
+                            <input type="text" (keyup)="keyupValidation($event)" class="form-control" [(ngModel)]="demoProfile.lName" name="lName" id="lName" #lName placeholder="Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email *</label>
+                            <input type="email" (keyup)="keyupValidation($event)"  class="form-control" [(ngModel)]="demoProfile.email" name="email" id="email" #email placeholder="juandelacruz@email.com" required>
+                        </div>
+                        <div class="form-group"> 
+                            <label for="inputCountry">Country *</label>
+                            <select class="form-control" (change)="keyupValidation($event)" name="country" id="country" [(ngModel)]="demoProfile.country">
+                                <option disabled value="" selected>Select country</option>
+                                <option *ngFor="let country of countryList.countries"[attr.value]="country" [attr.selected]="country == demoProfile.country  ? true : null">{{country}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputWebsite">Website</label>
+                            <input type="text"  [(ngModel)]="demoProfile.website" class="form-control" name="website" id="website">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSoundcloud">Soundcloud</label>
+                            <input type="text" [(ngModel)]="demoProfile.soundCloud" class="form-control" name="soundCloud" id="soundCloud" placeholder="https://soundcloud.com/moophs">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSpotify">Spotify</label>
+                            <input type="text" [(ngModel)]="demoProfile.spotify" class="form-control" name="spotify" id="spotify" placeholder="https://open.spotify.com/artist/3HaL9ONkedXrAybTHYA3w1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTwitter">Twitter</label>
+                            <input type="text" [(ngModel)]="demoProfile.twitter" class="form-control" name="twitter" id="twitter" placeholder="https://twitter.com/m00phs">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputFacebook">Facebook</label>
+                            <input type="text" [(ngModel)]="demoProfile.facebook" class="form-control" name="facebook" id="facebook" placeholder="https://www.facebook.com/moophs/">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMobileNum">Mobile</label>
+                            <input type="number" [(ngModel)]="demoProfile.mobileNumber" class="form-control" name="mobileNumber" id="mobileNumber" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="two-column">
+                    <div class="left">
+                        <h1>TRACK</h1>
+                    </div>
+                    <div class="right">
+                        <div class="form-group">
+                            <label for="inputTrackTitle">Track Title *</label>
+                            <input type="text" (keyup)="keyupValidation($event)" [(ngModel)]="demoProfile.trackTitle" class="form-control" name="inputTrackTitle" id="trackTitle" placeholder="Give us a track that best represents you and your genre." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputGenre">Genre *</label>
+                            <input type="text" (keyup)="keyupValidation($event)" [(ngModel)]="demoProfile.genre" #genre class="form-control" name="genre" id="genre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTrackLink">Track Link *</label>
+                            <input type="text" (keyup)="keyupValidation($event)" [(ngModel)]="demoProfile.trackLink" #trackLink class="form-control" name="trackLink" id="trackLink" placeholder="Youtube, Soundcloud, beatport, etc." required>
+                            <span class="help">Private streaming links only</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputExclusive">Is this an exclusive track? *</label>
+                            <label class="radio-inline">
+                                <input type="radio" [class.input-error]="!demoProfile.isExclusive && submitted" (click)="keyupValidation($event)" class="styled fa" id="isExclusiveYes" [(ngModel)]="demoProfile.isExclusive" #isExclusive aria-hidden="true" name="isExclusive" value="YES"> <span>YES</span>
+                              </label>
+                              <label class="radio-inline">
+                                <input type="radio" class="styled fa" [class.input-error]="!demoProfile.isExclusive && submitted" id="isExclusiveNo" (click)="keyupValidation($event)" [(ngModel)]="demoProfile.isExclusive"  aria-hidden="true" name="isExclusive" value="NO"> <span>NO</span>
+                              </label>
+                        </div>
+                        <div class="form-group artist-label" [ngClass]="{'show': demoProfile.isExclusive == 'NO' }">
+                            <label for="inputLabelArtist">Label/Artist *</label>
+                            <input type="text" (keyup)="keyupValidation($event)" class="form-control" [(ngModel)]="demoProfile.artistLabel" #artistLabel  name="artistLabel" id="artistLabel" placeholder="Type the label/artist it has been sent to" required>
+                        </div>
+                        <div class="form-agree">
+                            <label for="inputTAC"><span>By clicking SUBMIT, you agree to our <a href="terms.html" target="_blank">Terms and Conditions.</a></span></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btnSubmit">SUBMIT</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</div>
+<app-alert *ngIf="modalState" [myAppAlert]="appAlertMsgData" (modalCloseAction)="getModalAction($event)"></app-alert>

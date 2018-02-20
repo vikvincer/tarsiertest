@@ -1,0 +1,19 @@
+<header class="{{hamburgerState}} {{scrollState}}">
+    <nav>
+        <div class="logo">
+            <img src="assets/images/logo-tarsier-records.png" alt="">
+        </div>
+        <div class="hamburger-container">
+            <a href="javascript:void(0)" (click)="menuState()" class="hamburger {{hamburgerState}}"><div class="hamburger__icon"></div></a>
+        </div>
+        <div class="menu {{hamburgerState}}">
+            <ul>
+                <li (click)="gotoLink()" routerLink="" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a>HOME</a></li>
+                <li (click)="gotoLink()" routerLink="releases" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a>RELEASES</a></li>
+                <li (click)="gotoLink()" class="{{isArtistLinkStatus}}" routerLink="artists" [routerLinkActive]="['active']"><a>ARTISTS</a></li>
+                <li (click)="gotoLink()" routerLink="about" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a>ABOUT</a></li>
+                <li (click)="gotoLink()" routerLink="submit-demo" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a>SUBMIT A DEMO</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

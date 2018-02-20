@@ -1,0 +1,56 @@
+<div class="main-content">
+
+    <div class="block section-about" data-section-name="about">
+        <div class="details center light">
+            <h2>About Us</h2>
+            <p>C/O Client. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+        </div>
+
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="assets/images/bg-contact.jpg" media="(min-width: 769px)">
+                <source srcset="assets/images/bg-contact-768.jpg" media="(min-width: 569px)">
+                <source srcset="assets/images/bg-contact-568.jpg" media="(min-width: 321px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="assets/images/bg-contact-568.jpg" alt="Contact">
+        </picture>
+    </div>
+
+    <div class="block section-contact contact" data-section-name="contact">
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="assets/images/bg-contact-text.jpg" media="(min-width: 769px)">
+                <source srcset="assets/images/bg-contact-text-568.jpg" media="(min-width: 569px)">
+                <source srcset="assets/images/bg-contact-text-568.jpg" media="(min-width: 321px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="assets/images/bg-contact-text-568.jpg" alt="Demo">
+        </picture>
+
+        <div class="details left">
+            <h2 class="name">CONTACT US</h2>
+            <p>If you’ve got questions, comments, or suggestions, we would love to hear from you. Hit us up!</p>
+            <img class="logo" src="assets/images/logo-tarsier-records-largeb.png" alt="Tarsier Records">
+        </div>
+        <div class="details right">
+            <form class="form-dark" (ngSubmit)="onSubmit()" #contactForm="ngForm" #formContactUs>
+                <div class="form-group grid-2">
+                    <label for="inputFirstName">Name *</label>
+                    <input type="text" class="form-control" name="fName" id="fName" [(ngModel)]="contactUsData.fName" placeholder="First Name" (keyup)="keyupValidation($event)"  required>
+                    <input type="text" class="form-control" name="lName" [(ngModel)]="contactUsData.lName" id="lName" placeholder="Last Name" (keyup)="keyupValidation($event)" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email *</label>
+                    <input type="email" class="form-control" name="email" id="email" [(ngModel)]="contactUsData.email" placeholder="juandelacruz@email.com" (keyup)="keyupValidation($event)" required>
+                </div>
+                <div class="form-group"> 
+                    <label for="inputMessage">Message *</label>
+                    <textarea rows="10" class="form-control" [(ngModel)]="contactUsData.message" name="message" id="message" (keyup)="keyupValidation($event)" noresize></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark" id="btnSubmit">SUBMIT</button>
+            </form>
+        </div>
+
+    </div>
+    
+</div>

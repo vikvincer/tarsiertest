@@ -1,0 +1,18 @@
+<div id="successLightbox" class="lightbox animated fadeIn" style="display:block"> 
+    <div class="lightbox-content">
+        <a (click)="close()" class="btn-close">&times;</a> 
+
+        <div class="lightbox-body">
+            <div class="header-title">
+                <h1>{{myAppAlert.data.title}}</h1>
+            </div>
+            <div class="content-body">
+                <p *ngFor="let msg of myAppAlert.data.msg">{{msg}}</p>
+                <img src="assets/images/logo-tarsier-records-largeb_white.png" alt="Tarsier Logo" class="logo">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

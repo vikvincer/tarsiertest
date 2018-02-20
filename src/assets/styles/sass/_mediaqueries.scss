@@ -1,0 +1,269 @@
+///////////////////
+// Media Queries //
+///////////////////
+
+// Large devices 960
+@media (max-width: $screen-md) {
+	a {
+		&.btn {
+			padding: 15px;
+			width: 180px;
+		}
+	}
+	.main-content {
+		.block {
+			margin-top: 0;
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			.details {
+				h2 {
+					font-size: 48px;
+				}
+				p {
+					line-height: 1.4;
+					max-width: 260px;
+					font-size: 14px;
+					padding: 3px 0px;
+				}
+			}
+			&:nth-child(2n) {
+				-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			}
+		}
+	}
+}
+
+// Medium devices 768
+@media (max-width: $screen-sm) {
+	.main-content {
+		.block {
+			margin-top: 0;
+			.details {
+				.logo {
+					width: percentage(255px/768px);
+				}
+			}
+			&.block-artists {
+				.details {
+					&.left {
+						top: 20%;
+					}
+					&.right {
+						top: 40%;
+						right: auto;
+					    margin-top: 60px;
+					    left: percentage(50px/1400px);
+					    padding: 0;
+					}
+				}
+			}
+		}
+	}
+	.section-home { 
+		.video-embed {
+			.cover {
+				display: block;
+			}
+			iframe {
+				display: none;
+			}
+		}
+	}
+	.artists-content {
+		.pagination {
+			&.floated-left {
+				display: none;
+			}
+			&-mobile {
+				display: block;
+			}
+		}
+		.swipe {
+			display: block;
+		}
+	}
+	.demo-content {
+		.block {
+			form {
+				width: 95%;
+			}
+		}
+	}
+	.inner-content {
+		padding-top: 150px;
+	}
+	form {
+		.two-column {
+			.left {
+				width: percentage(250px/1400px);
+				margin-right: percentage(25px/1400px);
+				h1 {
+					font-size: 48px;
+				}
+			} 
+			.right {
+				width: percentage(1125px/1400px);
+			}
+		}
+	}
+	.form-title {
+		h2 {
+			font-size: 48px;
+		}
+		p {
+			display: block;
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+	footer {
+		padding: 10px 20px;
+		&.main {
+			.newsletter, .social {
+				display: none;
+			}
+		}
+		.justify {
+			float: right;
+			.links {
+				padding-top: 0;
+				font-size: 10px;
+				a {
+					
+				}
+			}
+		}
+		.fineprint {
+		    float: left;
+		    padding-top: 0;
+		}
+	}
+	.ad-leaderboard-top {
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+// Small devices 568
+@media (max-width: $screen-xs) {
+	header {
+		height: 90px;
+		.logo {
+			width: 60px;
+			height: 60px;
+			top: 10px;
+			left: 10px;
+			margin-top: 0;
+		}
+	}
+	.hamburger-container {
+		top: 0;
+	}
+	.main-content {
+		.block {
+			&:first-child {
+				padding-top: 50px;
+				.details {
+					position: relative;
+				    top: auto;
+				    left: auto;
+				    -webkit-transform: none;
+				    -ms-transform: none;
+				    transform: none;
+					h2, p {
+						color: $white;
+					}
+					.btn {
+						background-color: $white;
+						color: $black;
+					}
+				}
+			}
+			.details {
+				p {
+					line-height: 1.2;
+					max-width: 80%;
+				}
+			}
+			&.block-artists {
+				.details {
+					&.left {
+						top: 30%;
+					}
+					&.right {
+						margin-top: 120px;
+						&>p {
+							display: none;
+						}
+					}
+				}
+				picture {
+					img {
+						width: auto;
+					}
+				}
+			}
+		}
+
+	}
+	.section-home {
+	    padding: 10px 0;
+	}
+	.artists-content {
+		.know-more {
+			display: block;
+		}
+	}
+}
+
+// Small devices 480
+@media (max-width: $screen-xxs) {
+	.main-content {
+		.block {
+			.details {
+				h2 {
+					font-size: 36px;
+				}
+			}
+		}
+	}
+	.inner-content {
+		padding-top: 80px;
+	}
+	form {
+		.two-column {
+			.left {
+				width: percentage(1400px/1400px);
+				margin-right: 0;
+				text-align: left;
+				h1 {
+					font-size: 48px;
+				}
+			} 
+			.right {
+				width: percentage(1400px/1400px);
+			}
+		}
+	}
+	.form-title {
+		p {
+			width: 100%;
+		}
+	}
+	footer {
+		padding: 10px;
+		&.fineprint {
+			font-size: 8px;
+		}
+	    .justify {
+	    	.links {
+	    		font-size: 8px;
+	    		a {
+	    			font-size: 8px;
+	    		}
+	    	}
+	    }
+	}
+}

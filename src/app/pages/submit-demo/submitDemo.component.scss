@@ -1,0 +1,16 @@
+.artist-label {
+    height: 0;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+    margin-bottom: 0;
+    &.show {
+        height: 75px;
+        margin-bottom: 20px;
+    }
+}
+.input-error {
+    border:1px solid red !important;
+}
+.radio-input-error {
+    color: red;
+}

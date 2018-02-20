@@ -1,0 +1,71 @@
+<div class="main-content"> 
+
+    <div class="block section-home main" data-section-name="main" #videoBlock>
+        <div class="details">
+            <h2>Latest Release</h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <a href="latest.html" class="btn">See Releases</a>
+        </div>
+
+        <div class="video-embed youtube" #videoEmbed>
+            <!-- <img src="https://img.youtube.com/vi/-glkPdjTPxs/sddefault.jpg" alt=""> -->
+            <!-- <img src="assets/images/bg-featured.jpg" alt=""> -->
+            <!-- &amp;autoplay=1 -->
+            <img *ngIf="!playerReady" src="assets/images/bg-featured.jpg" alt="">
+            <app-yt-player  [ytVideoId]="ytVidID" [class.hide]="!playerReady" [class.show]="playerReady" (playerVideoStatus)="getPlayerStatus($event)"></app-yt-player>
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/-glkPdjTPxs?rel=0&amp;controls=0&amp;showinfo=0&amp;iv_load_policy=3&amp;loop=1&amp;autoplay=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe> -->
+        </div>
+    </div>
+
+    <div class="block section-home artists1" data-section-name="artists" #artistBlock>
+        <div class="details">
+            <h2 class="title">Artists</h2> 
+            <p class="title-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </p>
+            <a href="artists.html" class="btn">See Artists</a>
+        </div>
+
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="assets/images/bg-artist.jpg" media="(min-width: 769px)">
+                <source srcset="assets/images/bg-artist-768.jpg" media="(min-width: 569px)">
+                <source srcset="assets/images/bg-artist-568.jpg" media="(min-width: 321px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="assets/images/bg-artist-568.jpg" alt="Artist">
+        </picture>
+    </div>
+
+    <div class="block section-home contact1" data-section-name="contact" #contactBlock>
+        <div class="details light">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="assets/images/bg-contact.jpg" media="(min-width: 769px)">
+                <source srcset="assets/images/bg-contact-768.jpg" media="(min-width: 569px)">
+                <source srcset="assets/images/bg-contact-568.jpg" media="(min-width: 321px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="assets/images/bg-contact-568.jpg" alt="Contact">
+        </picture>
+    </div>
+
+    <div class="block section-home join1" data-section-name="join" #submitBlock>
+        <div class="details center">
+            <img class="logo" src="assets/images/logo-tarsier-records-largeb.png" alt="Tarsier Records">
+            <h2>Want to join the Family?</h2>
+            <a href="contact.html" class="btn">Submit a Demo</a>
+        </div>
+
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="assets/images/bg-demo.jpg" media="(min-width: 769px)">
+                <source srcset="assets/images/bg-demo-568.jpg" media="(min-width: 569px)">
+                <source srcset="assets/images/bg-demo-568.jpg" media="(min-width: 321px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="assets/images/bg-demo-568.jpg" alt="Demo">
+        </picture>
+    </div>
+    
+</div>

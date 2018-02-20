@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*!
+ * [Project Name]
+ * ABS-CBN Corporation 2017
+ */
+
+// Reset
+@import 'assets/styles/sass/normalize';
+
+// Variables
+@import 'assets/styles/sass/variables';
+
+// Main
+@import 'assets/styles/sass/main';
+
+// Media Queries
+@import 'assets/styles/sass/mediaqueries';
+
+// Font Awesome
+@import 'assets/styles/font-awesome.min.css';
+
+// Print
+@import 'assets/styles/sass/print';

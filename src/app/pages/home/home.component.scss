@@ -1,0 +1,22 @@
+.video-embed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+    iframe {
+        width: 100%;
+    }
+}
+.hide {
+    opacity: 0;
+}
+.block {
+    // transition: all .5s ease-in-out;
+}
+.main-content.block {
+    background: transparent !important;
+}
